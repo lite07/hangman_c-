@@ -52,7 +52,7 @@ std::string getWord(int difOption)
 {
 	std::vector<std::string> listOfWords; 	//Vector of strings to store the words.
 	std::ifstream ifile;			//Input file stream.
-	std::string line;				//String variable to get from the file stream.
+	std::string line;			//String variable to get from the file stream.
 	//Accessing different word list according to the difficulty.
 	switch(difOption)
 	{
@@ -107,8 +107,8 @@ bool checkGuess(std::string &targetLetters, std::string &guessedWord, std::strin
 
 void hangmanGame(int difOption)
 {	
-	int lives = 6; 									//Number of lives. 	
-	char guessedLetter = ' '; 						//Char variable to input your guess.
+	int lives = 6; 					//Number of lives. 	
+	char guessedLetter = ' '; 			//Char variable to input your guess.
 	std::string targetWord = getWord(difOption);	//The word you want to guess. Taking a random word from a .txt file using getWord().
 	std::string guessedWord = "";		//String variable to show your progress.
 	
@@ -125,7 +125,7 @@ void hangmanGame(int difOption)
 	while(targetLetters.size()!=0&&lives>0)
 	{
 		std::cout << "You have " << lives << " lives left!\n";	//Displaying your remaining lives.
-		std::cout << "Enter a letter: ";						//Entering your guess.
+		std::cout << "Enter a letter: ";			//Entering your guess.
 		std::cin >> guessedLetter;
 		if(!checkGuess(targetLetters, guessedWord, targetWord, guessedLetter))	//Checking the guess.
 		{
@@ -148,14 +148,14 @@ int main()
 {
 	bool continuePlay = true; 	//Continous option.
 	char continueOpt;
-	int menuOpt = 0;			//Menu option.
-	int difOption = 1;			//Difficulty option.
+	int menuOpt = 0;		//Menu option.
+	int difOption = 1;		//Difficulty option.
 	while(continuePlay)
 	{
 		std::cout <<"========================\n"
-				  <<"1.Play Hangman\n"
-				  <<"2.Change difficulty\n"
-				  <<"3.Exit\n";
+			  <<"1.Play Hangman\n"
+			  <<"2.Change difficulty\n"
+			  <<"3.Exit\n";
 		std::cout << "Enter option: ";
 		std::cin >> menuOpt;
 		switch(menuOpt)
